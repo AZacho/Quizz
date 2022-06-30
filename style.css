@@ -8,3 +8,15 @@ body {
     align-items: center;
     margin-top: 24px;
 }
+
+.question-card {
+    width: 30rem;
+}
+
+.nextquestion {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
