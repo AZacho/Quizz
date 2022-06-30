@@ -1,4 +1,8 @@
-.cardclass {
+body {
+    background-color: #0083ff;
+}
+
+.cardcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
