@@ -1,0 +1,43 @@
+let questions = [
+    {
+        "question": "Wie heißt die Mutter von Harry Potter?",
+        "answer_1": "Hermine",
+        "answer_2": "Myrte",
+        "answer_3": "Lily Potter",
+        "answer_4": "Cassandra",
+        "right_answer": 3
+    },
+    {
+        "question": "Wann wurde das Technische Hilfswerk (THW) gegründet?",
+        "answer_1": "13. April 1951",
+        "answer_2": "22. August 1950",
+        "answer_3": "27. Oktober 1949",
+        "answer_4": "3. Februar 1952",
+        "right_answer": 2
+    },
+    {
+        "question": "Wo ist Sebastian Vettel aufgewachsen?",
+        "answer_1": "Herne",
+        "answer_2": "Herfurt",
+        "answer_3": "Hockenheim",
+        "answer_4": "Heppenheim",
+        "right_answer": 4
+    },
+    {
+        "question": "Wie heißt der Schauspieler von Simon Camdon?",
+        "answer_1": "David Gallagher",
+        "answer_2": "Robert Malone",
+        "answer_3": "Kevin McSolbyer",
+        "answer_4": "André Brown",
+        "right_answer": 1
+    },
+    {
+        "question": "Wann gewannen die Detroit Lions (NFL) ihre letzte Championchip?",
+        "answer_1": "1987",
+        "answer_2": "1962",
+        "answer_3": "1957",
+        "answer_4": "noch nie",
+        "right_answer": 3
+    },
+];
+
