@@ -61,9 +61,18 @@ function init() {
 }
 
 function showQuestion() {
-    let question = questions[currentQuestion];
 
-    document.getElementById('questiontext').innerHTML = question['question'];
+
+    if (currentQuestion >= questions.length) {
+        // TODO: Show End Screen
+    } else {
+
+        let question = questions[currentQuestion];
+
+        document.getElementById('question-number').innerHTML = currentQuestion + 1; // Zeigt an, bei welcher Frage wir sind!
+
+        document.getElementById('questiontext').innerHTML = question['question'];
+    }
 }
 
 function showAnswers() {
@@ -87,5 +96,32 @@ function answer(selection) {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
-    document.getElementById('next-button').disabled = false;
-} 
+    document.getElementById('next-button').disabled = false; // Gibt den Button zum Klicken frei, nachdem eine Antwort gewählt wurde
+}
+
+
+function nextQuestion() {
+    currentQuestion++; // Fragen z.B. von 0 auf 1 erhöhen
+    currentAnswers++; // Antworten z.B. von 0 auf 1 erhöhen
+    document.getElementById('next-button').disabled = true;
+    resetAnswerButtons();
+    showQuestion(); // Fragen aus dem JSON ziehen
+    showAnswers(); // Antworten aus dem JSON ziehen
+
+}
+
+function resetAnswerButtons() {
+    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+}
+
+function questionCounter() {
+    clicks += 1;
+    document.getElementById('clicks').innerHTML = clicks;
+};
