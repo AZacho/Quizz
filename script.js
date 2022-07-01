@@ -3,7 +3,7 @@ let questions = [
         "question": "Wie heißt die Mutter von Harry Potter?",
         "answer_1": "Hermine",
         "answer_2": "Myrte",
-        "answer_3": "Lily Potter",
+        "answer_3": "Lily",
         "answer_4": "Cassandra",
         "right_answer": 3
     },
@@ -82,7 +82,7 @@ function answer(selection) {
     console.log('selectedQuestionNumber is', selectedQuestionNumber);
     console.log('Current question is', question['right_answer']);
 
-    let idOfRightAnswer = 'answer_3';
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Antwort!!');
