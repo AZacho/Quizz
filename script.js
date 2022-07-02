@@ -52,6 +52,8 @@ let questions = [
 let currentQuestion = 0;
 let currentAnswers = 0;
 
+let rightQuestions = 0;
+
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
@@ -67,6 +69,10 @@ function showQuestion() {
         // TODO: Show End Screen
         document.getElementById('finishedQuiz').style = ''; //blendet das "display: none;" aus dem HTML String aus und "beendet" das Quiz
         document.getElementById('questionCards').style = 'display: none;'; // Blendet die Antwortsektion aus, nachdem die letzte Frage beendet ist
+
+        document.getElementById('amount-of-questions').innerHTML = questions.length;
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+        document.getElementById('header-image').src = 'img/trophy.jpg';
     } else {
 
         let question = questions[currentQuestion];
@@ -94,6 +100,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
