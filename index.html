@@ -26,6 +26,10 @@
     <div class="cardcontainer">
         <div class="card question-card">
             <img src="img/qizcardimg1.jpg" id="header-image" class="card-img-top">
+
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 100%"></div>
+              </div>
             
             <div class="card-body" id="finishedQuiz" style="display: none;">
                 <div class="text-center finish-headline">
@@ -34,6 +38,10 @@
 
                 <div class="text-center">
                     Du hast <b id="amount-of-right-questions">X</b> Fragen von <b id="amount-of-questions"></b> richtig beantwortet!
+                </div>
+
+                <div class="new-game-btn">
+                    <button type="button" class="btn btn-outline-primary" onclick="restartGame()">Erneut Spielen</button>
                 </div>
                 
             </div>

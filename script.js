@@ -54,6 +54,9 @@ let currentAnswers = 0;
 
 let rightQuestions = 0;
 
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_FAIL = new Audio('audio/fail.mp3');
+
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
@@ -73,9 +76,14 @@ function showQuestion() {
         document.getElementById('amount-of-questions').innerHTML = questions.length;
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
         document.getElementById('header-image').src = 'img/trophy.jpg';
-    } else {
+    } else { // Show Question
 
         let question = questions[currentQuestion];
+
+        let percent = (currentQuestion + 1) / questions.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
 
         document.getElementById('question-number').innerHTML = currentQuestion + 1; // Zeigt an, bei welcher Frage wir sind!
 
@@ -101,9 +109,11 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
         rightQuestions++;
+        AUDIO_SUCCESS.play();
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        AUDIO_FAIL.play();
     }
     document.getElementById('next-button').disabled = false; // Gibt den Button zum Klicken frei, nachdem eine Antwort gewählt wurde
 }
@@ -134,3 +144,14 @@ function questionCounter() {
     clicks += 1;
     document.getElementById('clicks').innerHTML = clicks;
 };
+
+
+function restartGame() {
+    document.getElementById('header-image').src = 'img/qizcardimg1.jpg';
+    document.getElementById('finishedQuiz').style = 'display: none;';
+    document.getElementById('questionCards').style = '';
+    currentQuestion = 0;
+    currentAnswers = 0;
+    rightQuestions = 0;
+    init();
+}

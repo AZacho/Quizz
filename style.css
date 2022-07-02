@@ -42,3 +42,9 @@ body {
     font-size: 38px;
     margin-bottom: 32px;
 }
+
+.new-game-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
