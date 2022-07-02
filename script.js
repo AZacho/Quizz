@@ -65,6 +65,8 @@ function showQuestion() {
 
     if (currentQuestion >= questions.length) {
         // TODO: Show End Screen
+        document.getElementById('finishedQuiz').style = ''; //blendet das "display: none;" aus dem HTML String aus und "beendet" das Quiz
+        document.getElementById('questionCards').style = 'display: none;'; // Blendet die Antwortsektion aus, nachdem die letzte Frage beendet ist
     } else {
 
         let question = questions[currentQuestion];

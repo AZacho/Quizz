@@ -26,7 +26,23 @@
     <div class="cardcontainer">
         <div class="card question-card">
             <img src="img/qizcardimg1.jpg" class="card-img-top">
-            <div class="card-body">
+            
+            <div class="card-body" id="finishedQuiz" style="display: none;">
+                <div class="text-center">
+                    Quizz beendet!
+                </div>
+
+                <div>
+                    <img class="width-100" src="img/trophy.jpg" alt="">
+                </div>
+
+                <div class="text-center">
+                    Du hast <b>X</b> Fragen von <b id="all-questions"></b> richtig beantwortet!
+                </div>
+                
+            </div>
+            
+            <div class="card-body" id="questionCards">
                 <h5 class="card-title" id="questiontext">Frage</h5>
 
                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
